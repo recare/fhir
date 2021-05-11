@@ -35,8 +35,8 @@ type Resource_Recare struct {
 }
 
 type QuestionnaireEntry []struct {
-	FullUrl  *string   `json:"fullUrl,omitempty"`
-	Resource *Resource `json:"resource,omitempty"`
+	FullUrl  *string          `json:"fullUrl,omitempty"`
+	Resource *Resource_Recare `json:"resource,omitempty"`
 }
 
 type QuestionnaireItem []struct {
