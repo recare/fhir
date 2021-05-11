@@ -24,7 +24,7 @@ type Identifier_Recare struct {
 	Value  *string `json:"value,omitempty"`
 }
 
-type Resource struct {
+type Resource_Recare struct {
 	ResourceType  *string            `json:"resourceType,omitempty"`
 	ID            *string            `json:"id,omitempty"`
 	Identifier    *Identifier_Recare `json:"identifier,omitempty"`
