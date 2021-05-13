@@ -37,7 +37,7 @@ type Encounter struct {
 	Identifier       []Identifier                       `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status           string                             `bson:"status,omitempty" json:"status,omitempty"`
 	StatusHistory    []EncounterStatusHistoryComponent  `bson:"statusHistory,omitempty" json:"statusHistory,omitempty"`
-	Class            string                             `bson:"class,omitempty" json:"class,omitempty"`
+	Class            *Coding                            `bson:"class,omitempty" json:"class,omitempty"`
 	Type             []CodeableConcept                  `bson:"type,omitempty" json:"type,omitempty"`
 	Priority         *CodeableConcept                   `bson:"priority,omitempty" json:"priority,omitempty"`
 	Patient          *Reference                         `bson:"patient,omitempty" json:"patient,omitempty"`
@@ -53,6 +53,7 @@ type Encounter struct {
 	Location         []EncounterLocationComponent       `bson:"location,omitempty" json:"location,omitempty"`
 	ServiceProvider  *Reference                         `bson:"serviceProvider,omitempty" json:"serviceProvider,omitempty"`
 	PartOf           *Reference                         `bson:"partOf,omitempty" json:"partOf,omitempty"`
+	Subject 		 *Reference							`bson:"subject,omitempty" json:"subject,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
@@ -121,7 +122,7 @@ type EncounterHospitalizationComponent struct {
 	SpecialCourtesy        []CodeableConcept `bson:"specialCourtesy,omitempty" json:"specialCourtesy,omitempty"`
 	SpecialArrangement     []CodeableConcept `bson:"specialArrangement,omitempty" json:"specialArrangement,omitempty"`
 	Destination            *Reference        `bson:"destination,omitempty" json:"destination,omitempty"`
-	DischargeDisposition   *CodeableConcept  `bson:"dischargeDisposition,omitempty" json:"dischargeDisposition,omitempty"`
+	//DischargeDisposition   *CodeableConcept  `bson:"dischargeDisposition,omitempty" json:"dischargeDisposition,omitempty"`
 	DischargeDiagnosis     []Reference       `bson:"dischargeDiagnosis,omitempty" json:"dischargeDiagnosis,omitempty"`
 }
 
