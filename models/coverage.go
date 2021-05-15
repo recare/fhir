@@ -48,6 +48,11 @@ type Coverage struct {
 	Subscriber     *Reference   `bson:"subscriber,omitempty" json:"subscriber,omitempty"`
 	Network        *Identifier  `bson:"network,omitempty" json:"network,omitempty"`
 	Contract       []Reference  `bson:"contract,omitempty" json:"contract,omitempty"`
+
+	// For German FHIR
+	Status      string     `bson:"status,omitempty" json:"status,omitempty"`
+	Beneficiary *Reference `bson:"beneficiary,omitempty" json:"beneficiary,omitempty"`
+	Payor       *Payor     `bson:"payor,omitempty" json:"payor,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
