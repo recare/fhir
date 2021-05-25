@@ -35,7 +35,7 @@ import (
 type QuestionnaireResponse struct {
 	DomainResource `bson:",inline"`
 	Identifier     *Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Questionnaire  *Reference                           `bson:"questionnaire,omitempty" json:"questionnaire,omitempty"`
+	Questionnaire  string                               `bson:"questionnaire,omitempty" json:"questionnaire,omitempty"`
 	Status         string                               `bson:"status,omitempty" json:"status,omitempty"`
 	Subject        *Reference                           `bson:"subject,omitempty" json:"subject,omitempty"`
 	Author         *Reference                           `bson:"author,omitempty" json:"author,omitempty"`
@@ -43,6 +43,7 @@ type QuestionnaireResponse struct {
 	Source         *Reference                           `bson:"source,omitempty" json:"source,omitempty"`
 	Encounter      *Reference                           `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Group          *QuestionnaireResponseGroupComponent `bson:"group,omitempty" json:"group,omitempty"`
+	Item 		   QuestionnaireItem 					`json:"item,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
