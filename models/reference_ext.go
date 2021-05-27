@@ -7,10 +7,8 @@ import (
 
 func (r *Reference) MarshalJSON() ([]byte, error) {
 	m := map[string]string{
-		"reference": r.Reference,
-	}
-	if r.Display != "" {
-		m["display"] = r.Display
+		"type":    "Organization",
+		"display": "Recare",
 	}
 	return json.Marshal(m)
 }
