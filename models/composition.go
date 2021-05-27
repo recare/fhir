@@ -35,19 +35,19 @@ import (
 type Composition struct {
 	DomainResource  `bson:",inline"`
 	Identifier      *Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Date            *FHIRDateTime                  `bson:"date,omitempty" json:"date,omitempty"`
-	Type            *CodeableConcept               `bson:"type,omitempty" json:"type,omitempty"`
-	Class           *CodeableConcept               `bson:"class,omitempty" json:"class,omitempty"`
-	Title           string                         `bson:"title,omitempty" json:"title,omitempty"`
 	Status          string                         `bson:"status,omitempty" json:"status,omitempty"`
-	Confidentiality string                         `bson:"confidentiality,omitempty" json:"confidentiality,omitempty"`
+	Type            *CodeableConcept               `bson:"type,omitempty" json:"type,omitempty"`
 	Subject         *Reference                     `bson:"subject,omitempty" json:"subject,omitempty"`
+	Encounter       *Reference                     `bson:"encounter,omitempty" json:"encounter,omitempty"`
+	Date            *FHIRDateTime                  `bson:"date,omitempty" json:"date,omitempty"`
 	Author          []Reference                    `bson:"author,omitempty" json:"author,omitempty"`
+	Title           string                         `bson:"title,omitempty" json:"title,omitempty"`
+	Section         []CompositionSectionComponent  `bson:"section,omitempty" json:"section,omitempty"`
+	Class           *CodeableConcept               `bson:"class,omitempty" json:"class,omitempty"`
+	Confidentiality string                         `bson:"confidentiality,omitempty" json:"confidentiality,omitempty"`
 	Attester        []CompositionAttesterComponent `bson:"attester,omitempty" json:"attester,omitempty"`
 	Custodian       *Reference                     `bson:"custodian,omitempty" json:"custodian,omitempty"`
 	Event           []CompositionEventComponent    `bson:"event,omitempty" json:"event,omitempty"`
-	Encounter       *Reference                     `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Section         []CompositionSectionComponent  `bson:"section,omitempty" json:"section,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
