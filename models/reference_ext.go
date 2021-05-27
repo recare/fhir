@@ -11,6 +11,10 @@ func (r *Reference) MarshalJSON() ([]byte, error) {
 	}
 	if r.Display != "" {
 		m["display"] = r.Display
+		if r.Display == "Recare" {
+			m["type"] = "Organization"
+			delete(m, "reference")
+		}
 	}
 	return json.Marshal(m)
 }
