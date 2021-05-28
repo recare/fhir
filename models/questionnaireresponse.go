@@ -43,7 +43,7 @@ type QuestionnaireResponse struct {
 	Source         *Reference                           `bson:"source,omitempty" json:"source,omitempty"`
 	Encounter      *Reference                           `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Group          *QuestionnaireResponseGroupComponent `bson:"group,omitempty" json:"group,omitempty"`
-	Item 		   QuestionnaireItem 					`json:"item,omitempty"`
+	Item           QuestionnaireItem                    `json:"item,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification

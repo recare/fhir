@@ -35,6 +35,7 @@ import (
 type Bundle struct {
 	Resource  `bson:",inline"`
 	Type      string                 `bson:"type,omitempty" json:"type,omitempty"`
+	Timestamp *FHIRDateTime          `bson:"timestamp,omitempty" json:"timestamp,omitempty"`
 	Total     *uint32                `bson:"total,omitempty" json:"total,omitempty"`
 	Link      []BundleLinkComponent  `bson:"link,omitempty" json:"link,omitempty"`
 	Entry     []BundleEntryComponent `bson:"entry,omitempty" json:"entry,omitempty"`

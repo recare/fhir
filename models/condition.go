@@ -34,22 +34,22 @@ import (
 
 type Condition struct {
 	DomainResource     `bson:",inline"`
-	Identifier         []Identifier     `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Patient            *Reference       `bson:"patient,omitempty" json:"patient,omitempty"`
-	Subject            *Reference       `bson:"subject,omitempty" json:"subject,omitempty"`
-	Encounter          *Reference       `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Asserter           *Reference       `bson:"asserter,omitempty" json:"asserter,omitempty"`
-	RecordedDate       *FHIRDateTime    `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
-	Code               *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
-	Category           *CodeableConcept `bson:"category,omitempty" json:"category,omitempty"`
-	ClinicalStatus     *CodeableConcept `bson:"clinicalStatus,omitempty" json:"clinicalStatus,omitempty"`
-	VerificationStatus string           `bson:"verificationStatus,omitempty" json:"verificationStatus,omitempty"`
-	Severity           *CodeableConcept `bson:"severity,omitempty" json:"severity,omitempty"`
-	OnsetDateTime      *FHIRDateTime    `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
-	OnsetAge           *Quantity        `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`
-	OnsetPeriod        *Period          `bson:"onsetPeriod,omitempty" json:"onsetPeriod,omitempty"`
-	OnsetRange         *Range           `bson:"onsetRange,omitempty" json:"onsetRange,omitempty"`
-	OnsetString        string           `bson:"onsetString,omitempty" json:"onsetString,omitempty"`
+	Identifier         []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Patient            *Reference                   `bson:"patient,omitempty" json:"patient,omitempty"`
+	Subject            *Reference                   `bson:"subject,omitempty" json:"subject,omitempty"`
+	Encounter          *Reference                   `bson:"encounter,omitempty" json:"encounter,omitempty"`
+	Asserter           *Reference                   `bson:"asserter,omitempty" json:"asserter,omitempty"`
+	RecordedDate       *FHIRDateTime                `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
+	Code               *CodeableConcept             `bson:"code,omitempty" json:"code,omitempty"`
+	Category           *CodeableConcept             `bson:"category,omitempty" json:"category,omitempty"`
+	ClinicalStatus     *CodeableConcept             `bson:"clinicalStatus,omitempty" json:"clinicalStatus,omitempty"`
+	VerificationStatus string                       `bson:"verificationStatus,omitempty" json:"verificationStatus,omitempty"`
+	Severity           *CodeableConcept             `bson:"severity,omitempty" json:"severity,omitempty"`
+	OnsetDateTime      *FHIRDateTime                `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
+	OnsetAge           *Quantity                    `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`
+	OnsetPeriod        *Period                      `bson:"onsetPeriod,omitempty" json:"onsetPeriod,omitempty"`
+	OnsetRange         *Range                       `bson:"onsetRange,omitempty" json:"onsetRange,omitempty"`
+	OnsetString        string                       `bson:"onsetString,omitempty" json:"onsetString,omitempty"`
 	AbatementDateTime  *FHIRDateTime                `bson:"abatementDateTime,omitempty" json:"abatementDateTime,omitempty"`
 	AbatementAge       *Quantity                    `bson:"abatementAge,omitempty" json:"abatementAge,omitempty"`
 	AbatementBoolean   *bool                        `bson:"abatementBoolean,omitempty" json:"abatementBoolean,omitempty"`

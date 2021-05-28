@@ -53,7 +53,7 @@ type Encounter struct {
 	Location         []EncounterLocationComponent       `bson:"location,omitempty" json:"location,omitempty"`
 	ServiceProvider  *Reference                         `bson:"serviceProvider,omitempty" json:"serviceProvider,omitempty"`
 	PartOf           *Reference                         `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Subject 		 *Reference							`bson:"subject,omitempty" json:"subject,omitempty"`
+	Subject          *Reference                         `bson:"subject,omitempty" json:"subject,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
@@ -123,7 +123,7 @@ type EncounterHospitalizationComponent struct {
 	SpecialArrangement     []CodeableConcept `bson:"specialArrangement,omitempty" json:"specialArrangement,omitempty"`
 	Destination            *Reference        `bson:"destination,omitempty" json:"destination,omitempty"`
 	//DischargeDisposition   *CodeableConcept  `bson:"dischargeDisposition,omitempty" json:"dischargeDisposition,omitempty"`
-	DischargeDiagnosis     []Reference       `bson:"dischargeDiagnosis,omitempty" json:"dischargeDiagnosis,omitempty"`
+	DischargeDiagnosis []Reference `bson:"dischargeDiagnosis,omitempty" json:"dischargeDiagnosis,omitempty"`
 }
 
 type EncounterLocationComponent struct {
