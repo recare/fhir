@@ -35,7 +35,7 @@ import (
 type Binary struct {
 	Resource    `bson:",inline"`
 	ContentType string `bson:"contentType,omitempty" json:"contentType,omitempty"`
-	Content     string `bson:"content,omitempty" json:"content,omitempty"`
+	Data        string `bson:"data,omitempty" json:"data,omitempty"`
 }
 
 // Custom marshaller to add the resourceType property, as required by the specification
