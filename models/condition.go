@@ -41,7 +41,7 @@ type Condition struct {
 	Asserter           *Reference                   `bson:"asserter,omitempty" json:"asserter,omitempty"`
 	RecordedDate       *FHIRDateTime                `bson:"recordedDate,omitempty" json:"recordedDate,omitempty"`
 	Code               *CodeableConcept             `bson:"code,omitempty" json:"code,omitempty"`
-	Category           *CodeableConcept             `bson:"category,omitempty" json:"category,omitempty"`
+	Category           []CodeableConcept            `bson:"category,omitempty" json:"category,omitempty"`
 	ClinicalStatus     *CodeableConcept             `bson:"clinicalStatus,omitempty" json:"clinicalStatus,omitempty"`
 	VerificationStatus string                       `bson:"verificationStatus,omitempty" json:"verificationStatus,omitempty"`
 	Severity           *CodeableConcept             `bson:"severity,omitempty" json:"severity,omitempty"`
