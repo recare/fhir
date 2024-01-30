@@ -34,7 +34,7 @@ import (
 
 type Location struct {
 	DomainResource       `bson:",inline"`
-	Identifier           []Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Identifier           *Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status               string                     `bson:"status,omitempty" json:"status,omitempty"`
 	Name                 string                     `bson:"name,omitempty" json:"name,omitempty"`
 	Description          string                     `bson:"description,omitempty" json:"description,omitempty"`
