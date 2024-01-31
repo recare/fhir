@@ -51,7 +51,7 @@ type Encounter struct {
 	Reason           []CodeableConcept                  `bson:"reason,omitempty" json:"reason,omitempty"`
 	Indication       []Reference                        `bson:"indication,omitempty" json:"indication,omitempty"`
 	Hospitalization  *EncounterHospitalizationComponent `bson:"hospitalization,omitempty" json:"hospitalization,omitempty"`
-	Location         []EncounterLocationComponent       `bson:"location,omitempty" json:"location,omitempty"`
+	Location         []EncounterLocation                `bson:"location,omitempty" json:"location,omitempty"`
 	ServiceProvider  *Reference                         `bson:"serviceProvider,omitempty" json:"serviceProvider,omitempty"`
 	PartOf           *Reference                         `bson:"partOf,omitempty" json:"partOf,omitempty"`
 	Subject          *Reference                         `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -97,6 +97,16 @@ func (x *Encounter) checkResourceType() error {
 		return errors.New(fmt.Sprintf("Expected resourceType to be Encounter, instead received %s", x.ResourceType))
 	}
 	return nil
+}
+
+type EncounterLocation struct {
+	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Location          Reference                `bson:"location" json:"location"`
+	Status            *EncounterLocationStatus `bson:"status,omitempty" json:"status,omitempty"`
+	PhysicalType      *CodeableConcept         `bson:"physicalType,omitempty" json:"physicalType,omitempty"`
+	Period            *Period                  `bson:"period,omitempty" json:"period,omitempty"`
 }
 
 type EncounterStatusHistoryComponent struct {
