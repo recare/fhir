@@ -103,7 +103,7 @@ type EncounterLocation struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Location          Reference                `bson:"location" json:"location"`
+	Location          *Location                `bson:"location" json:"location"`
 	Status            *EncounterLocationStatus `bson:"status,omitempty" json:"status,omitempty"`
 	PhysicalType      *CodeableConcept         `bson:"physicalType,omitempty" json:"physicalType,omitempty"`
 	Period            *Period                  `bson:"period,omitempty" json:"period,omitempty"`
