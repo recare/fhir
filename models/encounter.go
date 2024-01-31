@@ -42,7 +42,7 @@ type Encounter struct {
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            string                    `bson:"status" json:"status"`
+	Status            EncounterStatus           `bson:"status" json:"status"`
 	StatusHistory     []EncounterStatusHistory  `bson:"statusHistory,omitempty" json:"statusHistory,omitempty"`
 	Class             Coding                    `bson:"class" json:"class"`
 	ClassHistory      []EncounterClassHistory   `bson:"classHistory,omitempty" json:"classHistory,omitempty"`
@@ -55,7 +55,7 @@ type Encounter struct {
 	Participant       []EncounterParticipant    `bson:"participant,omitempty" json:"participant,omitempty"`
 	Appointment       []Reference               `bson:"appointment,omitempty" json:"appointment,omitempty"`
 	Period            *Period                   `bson:"period,omitempty" json:"period,omitempty"`
-	Length            *Quantity                 `bson:"length,omitempty" json:"length,omitempty"`
+	Length            *Duration                 `bson:"length,omitempty" json:"length,omitempty"`
 	ReasonCode        []CodeableConcept         `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference   []Reference               `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
 	Diagnosis         []EncounterDiagnosis      `bson:"diagnosis,omitempty" json:"diagnosis,omitempty"`
@@ -66,11 +66,11 @@ type Encounter struct {
 	PartOf            *Reference                `bson:"partOf,omitempty" json:"partOf,omitempty"`
 }
 type EncounterStatusHistory struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Status            string      `bson:"status" json:"status"`
-	Period            Period      `bson:"period" json:"period"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Status            EncounterStatus `bson:"status" json:"status"`
+	Period            Period          `bson:"period" json:"period"`
 }
 type EncounterClassHistory struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
@@ -110,13 +110,13 @@ type EncounterHospitalization struct {
 	DischargeDisposition   *CodeableConcept  `bson:"dischargeDisposition,omitempty" json:"dischargeDisposition,omitempty"`
 }
 type EncounterLocation struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Location          *Location        `bson:"location" json:"location"`
-	Status            string           `bson:"status,omitempty" json:"status,omitempty"`
-	PhysicalType      *CodeableConcept `bson:"physicalType,omitempty" json:"physicalType,omitempty"`
-	Period            *Period          `bson:"period,omitempty" json:"period,omitempty"`
+	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Location          *Location                `bson:"location" json:"location"`
+	Status            *EncounterLocationStatus `bson:"status,omitempty" json:"status,omitempty"`
+	PhysicalType      *CodeableConcept         `bson:"physicalType,omitempty" json:"physicalType,omitempty"`
+	Period            *Period                  `bson:"period,omitempty" json:"period,omitempty"`
 }
 type OtherEncounter Encounter
 
